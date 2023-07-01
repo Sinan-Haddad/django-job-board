@@ -27,6 +27,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("jobs/", include("job.urls", namespace="jobs")),
     path("contact-us/", include("contact.urls", namespace="contact")),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 urlpatterns += static(STATIC_URL, document_root=STATIC_ROOT)
 urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)

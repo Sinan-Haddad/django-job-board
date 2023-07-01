@@ -23,10 +23,22 @@ def job_detail_api(request,id):
     data = JobSerializer(job_detail).data
     return Response({'data':data})
 
-class JobListApi(generics.ListAPIView):
+# class JobListApi(generics.ListAPIView):
+#     model=Job
+#     queryset = Job.objects.all()
+#     serializer_class=JobSerializer
+
+
+class JobListApi(generics.ListCreateAPIView):
     model=Job
     queryset = Job.objects.all()
     serializer_class=JobSerializer
 
+class JobDetail(generics.RetrieveUpdateDestroyAPIView):
+    model=Job
+
+    serializer_class=JobSerializer
+    queryset = Job.objects.all()
+    lookup_field='id'
 
 

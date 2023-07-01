@@ -8,7 +8,7 @@ class Info(models.Model):
 
     class Meta:
         verbose_name = ("Info")
-        verbose_name_plural = ("Infos")
+        verbose_name_plural = ("Info")
 
     def __str__(self):
         return self.email

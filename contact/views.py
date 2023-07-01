@@ -21,5 +21,6 @@ def send_message(request):
             email,
             [settings.EMAIL_HOST_USER],
         )
+        print(request.POST['email'])
 
     return render(request,'contact/contact.html',{'myinfo':myinfo})

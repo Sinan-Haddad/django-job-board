@@ -16,4 +16,5 @@ urlpatterns = [
 
 
     path('api/v2/jobs',api.JobListApi.as_view() , name='job_list_api'),
+    path('api/v2/jobs/<int:id>',api.JobDetail.as_view() , name='job_detail_api'),
 ]
